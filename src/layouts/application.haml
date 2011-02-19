@@ -1,7 +1,9 @@
-!!!
-%html
+!!! 5
+%html{"lang" => "en"}
   %head
-    %title StaticMatic
+    %meta{"charset" => "utf-8"}
+    %title Ian Young
     = stylesheets
   %body
+    = partial('nav')
     = yield
