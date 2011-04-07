@@ -9,5 +9,5 @@ end
 
 def build_path
   # Trailing slash is important
-  "#{File.dirname __FILE__}/site/"
+  "#{File.dirname __FILE__}/build/"
 end
