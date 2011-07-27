@@ -1,5 +1,22 @@
 @import "normalize";
 
 body {
-    font-family: Verdana;
+  font-family: Verdana;
+}
+
+h1 {
+  font-family: "OstrichSansBold";
+  font-weight: normal;
+  font-size: 5em;
+}
+
+nav {
+  float: right;
+  margin-right: 1em;
+  li {
+    float: left;
+    margin-left: 1em;
+    font-family: "OstrichSansMedium";
+    font-size: 2em;
+  }
 }
