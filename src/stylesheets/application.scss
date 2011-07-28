@@ -1,13 +1,30 @@
 @import "normalize";
 
+$red: #4a0001;
+$dark_red: #2d0000;
+$off_white: #fff0d3;
+$blue: #055;
+$dark_blue: #022;
+
+$header_font: 8;
+$top_bar_height: $header_font * 16px;
+
 body {
   font-family: Verdana;
+  background-color: $off_white;
+  border-top: $top_bar_height solid $red;
+  h1, nav {
+    margin-top: -$top_bar_height;
+  }
+  padding-left: 1em;
 }
 
 h1 {
   font-family: "OstrichSansBold";
   font-weight: normal;
-  font-size: 5em;
+  font-size: #{$header_font}em;
+  color: $off_white;
+  margin: 0;
 }
 
 nav {
@@ -16,7 +33,18 @@ nav {
   li {
     float: left;
     margin-left: 1em;
-    font-family: "OstrichSansMedium";
+    font-family: "OstrichSansBlack";
     font-size: 2em;
+    a, a:visited {
+      color: $blue;
+      text-decoration: none;
+    }
+    &.current a, a:hover {
+      color: $dark_blue;
+    }
   }
+}
+
+a, a:visited {
+  color: $blue;
 }
