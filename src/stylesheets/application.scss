@@ -21,33 +21,37 @@ body {
 }
 
 h1 {
-  color: $off_white;
-  margin: 0;
-  text-shadow: none;
-
-  font-family: "OstrichSansBold";
-  font-weight: normal;
-  font-size: #{$header_font}em;
-
-  // There is something weird about Ostrich's alignment, adjust the margin
-  $header_font_offset: -0.2em;
-  margin-bottom: $content_padding/$header_font + $header_font_offset;
+  display: none;
 }
 
-nav {
-  float: right;
-  margin-right: 1em;
+nav ul {
+  margin: 0;
+  padding: 0;
+  overflow: auto;
   li {
     float: left;
-    margin-left: 1em;
     font-family: "OstrichSansBlack";
     font-size: 2em;
+    margin-left: 1em;
+    margin-top: 0.4em;
     a, a:visited {
-      color: $blue;
+      color: $off_white;
+      opacity: 0.7;
       text-decoration: none;
     }
     &.current a, a:hover {
-      color: $dark_blue;
+      opacity: 1.0;
+    }
+    &.current {
+      font-family: "OstrichSansBold";
+      font-weight: normal;
+      font-size: #{$header_font}em;
+      margin-top: 0;
+      // Give it the same margin as other list items
+      margin-left: #{2/$header_font}em;
+    }
+    &.first {
+      margin-left: 0;
     }
     a:hover {
       text-decoration: underline;
