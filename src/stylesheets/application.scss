@@ -17,11 +17,19 @@ h1 {
   display: none;
 }
 
-nav ul {
-  margin: 0;
-  padding: 0 0 0 1em;
-  height: $top_bar_height;
+nav ul, #content {
+  max-width: 50em;
+  margin: auto;
+}
+
+nav {
   background-color: $red;
+  height: $top_bar_height;
+  ul {
+    padding: 0;
+    height: $top_bar_height;
+    margin-top: 0;
+  }
   li {
     float: left;
     font-family: "OstrichSansBlack";
@@ -59,7 +67,6 @@ a, a:visited {
 
 #content {
   clear: both;
-  max-width: 50em;
   font-family: "AllerRegular";
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
   a {
