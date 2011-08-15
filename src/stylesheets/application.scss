@@ -9,15 +9,8 @@ $dark_blue: #022;
 $header_font: 8;
 $top_bar_height: $header_font * 16px;
 
-$content_padding: 1em;
-
 body {
   background-color: $off_white;
-  border-top: $top_bar_height solid $red;
-  h1, nav {
-    margin-top: -$top_bar_height;
-  }
-  padding-left: $content_padding;
 }
 
 h1 {
@@ -26,8 +19,9 @@ h1 {
 
 nav ul {
   margin: 0;
-  padding: 0;
-  overflow: auto;
+  padding: 0 0 0 1em;
+  height: $top_bar_height;
+  background-color: $red;
   li {
     float: left;
     font-family: "OstrichSansBlack";
@@ -64,6 +58,7 @@ a, a:visited {
 }
 
 #content {
+  clear: both;
   max-width: 50em;
   font-family: "AllerRegular";
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
