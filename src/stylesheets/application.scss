@@ -23,6 +23,10 @@ nav ul, #content {
   margin: auto;
 }
 
+nav, #content {
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+
 nav {
   background-color: $red;
   height: $top_bar_height;
@@ -73,7 +77,7 @@ a, a:visited {
   clear: both;
   font-family: "AllerRegular";
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: #FFF4DE;
   max-width: 50em - ($content_padding * 2);
   padding: $content_padding;
   margin-bottom: $content_padding;
