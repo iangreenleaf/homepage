@@ -1,26 +1,29 @@
-%h1 About Me
-
-.vcard
-  %img.photo{ :src => "images/ian_jenga.jpg", :alt => "Ian playing Jenga" }
+%section.about_me{ :itemscope => true, :itemtype => "http://schema.org/Person" }
+  %h1 About Me
+  .photo
+    = img "ian_jenga.jpg", :alt => "Ian playing Jenga", :itemprop => "image"
   :markdown
     Hi! I'm
-    <span class="fn n"><span class="given-name">Ian</span>
-    <span class="additional-name">Greenleaf</span>
-    <span class="family-name">Young</span></span>.
+    <span class="name" itemprop="name">Ian Greenleaf Young</span>.
     Around the web, you'll often find me going by the name
-    <span class="nickname">iangreenleaf</span>.
+    <span class="nickname" itemprop="name">iangreenleaf</span>.
 
-    I grew up in Minnesota, but right now I live and work in San Diego.
-    I'm a <span class="title">software developer</span>.
+    I grew up in Minnesota, but right now I live and work in
+    <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+      <span itemprop="addressLocality">San Diego</span>.
+      <meta itemprop="addressRegion" content="California" />
+      <meta itemprop="addressCountry" content="United States" />
+    </span>
+    I'm a <span class="title" itemprop="jobTitle">software developer</span>.
     These days my weapon of choice is Ruby/Rails, but I can find nice
     things to say about a lot of different languages.
     Hell, I've been known to express excitement over pointers.
 
     If you'd like to find out what makes me tick, maybe you should
-    <a rel="me" class="url blog" href="http://blog.iangreenleaf.com">take a look through my blog</a>, or
-    <a rel="me" class="url twitter" href="https://twitter.com/iangreenleaf">follow me on Twitter</a>.
+    <a rel="me" class="blog" itemprop="url" href="http://blog.iangreenleaf.com">take a look through my blog</a>, or
+    <a rel="me" class="twitter" itemprop="url" href="https://twitter.com/iangreenleaf">follow me on Twitter</a>.
     If you like reading code, you could check out
     [a brief history of my side projects](code.html) or
-    <a rel="me" class="url" href="https://github.com/iangreenleaf">fork me on github</a>.
+    <a rel="me" class="github" itemprop="url" href="https://github.com/iangreenleaf">fork me on github</a>.
     Or if you just need to be entertained, read about
     [a few of my hobbies](hobbies.html).
