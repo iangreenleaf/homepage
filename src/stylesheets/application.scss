@@ -10,6 +10,14 @@ $header_font: 8;
 $top_bar_height: $header_font * 16px;
 $content_padding: 2em;
 
+@mixin standout {
+  background-color: $off_white;
+  padding: 0 0.2em;
+  display: inline-block;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  line-height: 1.3em;
+}
+
 body {
   background-color: $off_white;
 }
@@ -98,14 +106,24 @@ a, a:visited {
 
   .about_me {
     .name, .nickname, .title, .address, .tech {
-      background-color: $off_white;
-      padding: 0 0.2em;
-      display: inline-block;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-      line-height: 1.3em;
+      @include standout;
     }
     .name, .nickname, .title {
       font-weight: bold;
+    }
+  }
+
+  .projects {
+    li {
+      margin: 1.5em 0;
+      a {
+        @include standout;
+      }
+      aside {
+        margin-top: 0.5em;
+        font-style: italic;
+        color: #666;
+      }
     }
   }
 }
