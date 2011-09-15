@@ -1,5 +1,5 @@
-task :publish do |t|
-  system "s3cmd", "put", "--recursive", build_path, "s3://www-iangreenleaf-com"
+task :publish => :build do |t|
+  system "s3cmd", "put", "--recursive", build_path, "s3://www.iangreenleaf.com"
 end
 
 task :build do |t|
