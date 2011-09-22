@@ -32,7 +32,8 @@ module MenubarHelper
       link_href = link_output.match(/href\=\"(.*?)\"/)[1].to_s
       link_href << "index.html" if link_href[-1, 1] == '/'
       link_href << ".html" unless link_href[-5, 5] == '.html'
-      selected = (link_href == current_page || link_href == current_page.sub(/^\//, ''))
+      current_gen_page = current_page.sub /\.haml$/, ".html"
+      selected = (current_gen_page =~ /[.\/]*(src\/?)?#{link_href}/)
       if selected
         if options[:selected][:item] == :a
           selected_options = options[:a].merge(options[:selected]).delete_if { |key, value| [:item, :link].include?(key) }
