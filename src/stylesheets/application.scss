@@ -1,4 +1,5 @@
 @import "normalize";
+@import "compass";
 
 $red: #4a0001;
 $dark_red: #2d0000;
@@ -17,6 +18,10 @@ $content_padding: 2em;
   display: inline-block;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   line-height: 1.3em;
+}
+@mixin deemphasized {
+  font-style: italic;
+  color: #666;
 }
 
 body {
@@ -150,8 +155,7 @@ a, a:visited {
       }
       aside {
         margin-top: 0.5em;
-        font-style: italic;
-        color: #666;
+        @include deemphasized;
       }
     }
   }
@@ -165,3 +169,5 @@ a, a:visited {
     }
   }
 }
+
+@import "proudify";

@@ -1,0 +1,58 @@
+.proudify {
+  ul.list {
+    list-style-type: none;
+    padding: 0;
+  }
+  .loading {
+    text-align: center;
+  }
+  .status {
+    float: right;
+  }
+  .red {
+    color: #650D0D;
+  }
+  .green {
+    color: #487A16;
+  }
+  .desc {
+    margin-left: 5px;
+    @include deemphasized;
+  }
+
+  &.github {
+    @include standout;
+    padding: 5px 0;
+    @include border-radius(5px);
+
+    ul.list {
+      margin: 5px;
+      li.item {
+        @include box-shadow(rgba(0,0,0,0.25) 0px 2px 3px inset);
+        background: $off_white - $off_white_step;
+        border-bottom: 1px solid $off_white + 2 * $off_white_step;
+        @include border-radius(5px);
+        padding: 10px;
+        margin: 5px;
+      }
+    }
+  }
+
+  &.coderwall {
+    li.item {
+      float: left;
+      margin: 5px;
+      a img {
+        width: 90px;
+        height: 90px;
+        border: 0;
+      }
+      a img {
+        opacity: 1.0;
+      }
+      a:hover img {
+        opacity: 0.6;
+      }
+    }
+  }
+}
