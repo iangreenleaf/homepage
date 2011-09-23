@@ -1,13 +1,15 @@
-%h1 My Résumé
-%p
-  = link_to "Here is a PDF résumé.", "files/resume.pdf"
-  It was last modified on
-  = succeed "," do
-    = date_modified( "files/resume.pdf" ).strftime "%x"
-  so it may not be up-to-date beyond that.
+%article.resume
+  %h1 My Résumé
+  %section
+    %p
+      = link_to "Here is a PDF résumé.", "files/resume.pdf"
+      It was last modified on
+      = succeed "," do
+        = date_modified( "files/resume.pdf" ).strftime "%x"
+      so it may not be up-to-date beyond that.
 
-%p
-  If you'd
-  like a living document instead, please take a look at
-  = succeed "." do
-    = link_to "my code", "code.html"
+    %p
+      If you'd
+      like a living document instead, please take a look at
+      = succeed "." do
+        = link_to "my code", "code.html"

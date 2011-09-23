@@ -1,29 +1,30 @@
-%article.about_me{ :itemscope => true, :itemtype => "http://schema.org/Person" }
+%article.about_me
   %h1 About Me
-  .photo
-    = img "ian_jenga.jpg", :alt => "Ian playing Jenga", :itemprop => "image"
-  :markdown
-    Hi! I'm
-    <span class="name" itemprop="name">Ian Greenleaf Young</span>.
-    Around the web, you'll often find me going by the name
-    <span class="nickname" itemprop="name">iangreenleaf</span>.
+  %section{ :itemscope => true, :itemtype => "http://schema.org/Person" }
+    .photo
+      = img "ian_jenga.jpg", :alt => "Ian playing Jenga", :itemprop => "image"
+    :markdown
+      Hi! I'm
+      <span class="name" itemprop="name">Ian Greenleaf Young</span>.
+      Around the web, you'll often find me going by the name
+      <span class="nickname" itemprop="name">iangreenleaf</span>.
 
-    I grew up in Minnesota, but right now I live and work in
-    <span class="address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-      <span itemprop="addressLocality">San Diego</span>.
-      <meta itemprop="addressRegion" content="California" />
-      <meta itemprop="addressCountry" content="United States" />
-    </span>
-    I'm a <span class="title" itemprop="jobTitle">software developer</span>.
-    These days my weapon of choice is <span class="tech">Ruby/Rails</span>,
-    but I can find nice things to say about a lot of different languages.
-    Hell, I've been known to express excitement over pointers.
+      I grew up in Minnesota, but right now I live and work in
+      <span class="address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+        <span itemprop="addressLocality">San Diego</span>.
+        <meta itemprop="addressRegion" content="California" />
+        <meta itemprop="addressCountry" content="United States" />
+      </span>
+      I'm a <span class="title" itemprop="jobTitle">software developer</span>.
+      These days my weapon of choice is <span class="tech">Ruby/Rails</span>,
+      but I can find nice things to say about a lot of different languages.
+      Hell, I've been known to express excitement over pointers.
 
-    If you'd like to find out what makes me tick, maybe you should
-    <a rel="me" class="blog" itemprop="url" href="http://blog.iangreenleaf.com">take a look through my blog</a>, or
-    <a rel="me" class="twitter" itemprop="url" href="https://twitter.com/iangreenleaf">follow me on Twitter</a>.
-    If you like reading code, you could check out
-    [a brief history of my side projects](code.html) or
-    <a rel="me" class="github" itemprop="url" href="https://github.com/iangreenleaf">fork me on github</a>.
-    Or if you just need to be entertained, read about
-    [a few of my hobbies](hobbies.html).
+      If you'd like to find out what makes me tick, maybe you should
+      <a rel="me" class="blog" itemprop="url" href="http://blog.iangreenleaf.com">take a look through my blog</a>, or
+      <a rel="me" class="twitter" itemprop="url" href="https://twitter.com/iangreenleaf">follow me on Twitter</a>.
+      If you like reading code, you could check out
+      [a brief history of my side projects](code.html) or
+      <a rel="me" class="github" itemprop="url" href="https://github.com/iangreenleaf">fork me on github</a>.
+      Or if you just need to be entertained, read about
+      [a few of my hobbies](hobbies.html).
