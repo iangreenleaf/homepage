@@ -6,19 +6,6 @@
   .loading {
     text-align: center;
   }
-  .status {
-    float: right;
-  }
-  .red {
-    color: #650D0D;
-  }
-  .green {
-    color: #487A16;
-  }
-  .desc {
-    margin-left: 5px;
-    @include deemphasized;
-  }
 
   &.github {
     @include standout;
@@ -32,8 +19,31 @@
         background: $off_white - $off_white_step;
         border-bottom: 1px solid $off_white + 2 * $off_white_step;
         @include border-radius(5px);
-        padding: 10px;
         margin: 5px;
+        $padding: 0.6em;
+        padding: $padding;
+
+        $status_width: 5.2em;
+        position: relative;
+        padding-right: $status_width + $padding;
+        .status {
+          position: absolute;
+          right: $padding;
+          top: 0;
+          line-height: 1.3em + $padding * 2;
+          width: $status_width;
+          text-align: right;
+        }
+        .red {
+          color: #650D0D;
+        }
+        .green {
+          color: #487A16;
+        }
+        .desc {
+          margin-left: 5px;
+          @include deemphasized;
+        }
       }
     }
   }
