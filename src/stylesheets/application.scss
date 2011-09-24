@@ -72,7 +72,8 @@ nav {
       margin-left: #{2/$header_font}em;
       // There is something weird about Ostrich's alignment, adjust the margin
       margin-bottom: -0.2em;
-
+      // And webkit gets confused about the font alignment
+      line-height: 1.2em;
     }
     &.first {
       margin-left: 0;
