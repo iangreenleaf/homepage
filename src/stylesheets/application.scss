@@ -55,10 +55,15 @@ nav {
     font-size: 2em;
     margin-left: 1em;
     margin-top: 0.4em;
+    line-height: 1em;
+    @include transition-property( font-size line-height );
+    @include transition-duration( 1s );
     a, a:visited {
       color: $off_white;
       opacity: 0.7;
       text-decoration: none;
+      @include transition-property( opacity );
+      @include transition-duration( 1s );
     }
     &.current a, a:hover {
       opacity: 1.0;

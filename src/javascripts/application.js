@@ -23,7 +23,12 @@ $(function() {
       );
     });
   };
+  var menuTransition = function(_, xhr, options) {
+    $("nav li.current").removeClass("current");
+    $(options.clickedElement).parent("li").addClass("current");
+  }
   trickOutContent();
   $("body").bind("pjax:end", trickOutContent);
+  $("body").bind("pjax:start", menuTransition);
   $("nav li a").pjax("#content", { fragment: ".shim" });
 });
