@@ -91,7 +91,7 @@
       $.each(this.badges, function(i, item) {
         var li, link;
         li = $('<li>').addClass('item').appendTo(self.list);
-        link = $('<a>').attr('href', 'shttp://coderwall.com/' + self.settings.username).attr('target', '_blank').appendTo(li);
+        link = $('<a>').attr('href', 'http://coderwall.com/' + self.settings.username).attr('target', '_blank').appendTo(li);
         return $('<img>').attr('alt', item.name).attr('title', item.description).attr('src', item.badge).appendTo(link);
       });
       return $('<div>').css('clear', 'both').appendTo(this.list);
