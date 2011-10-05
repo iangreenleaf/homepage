@@ -86,11 +86,18 @@ nav {
     a:hover {
       text-decoration: underline;
     }
+    a:active {
+      @include text-shadow($off_white 0 0 4px);
+    }
   }
 }
 
 a, a:visited {
   color: $blue;
+  &:active {
+    outline-width: 1px;
+    outline-style: dotted;
+  }
 }
 
 #content {
