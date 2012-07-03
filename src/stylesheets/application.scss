@@ -56,7 +56,8 @@ nav {
     margin-left: 1em;
     margin-top: 0.4em;
     line-height: 1em;
-    @include transition-property( font-size line-height );
+    margin-bottom: -0.5em;
+    @include transition-property( font-size line-height margin-top );
     @include transition-duration( 1s );
     a, a:visited {
       color: $off_white;
