@@ -67,8 +67,9 @@
       if (window.location.hash) {
         var activatedTab = base.$nav.find("li > a[href="+window.location.hash+"]");
         if (activatedTab.length) {
-          activatedTab.click()
-          $(window).scrollTop(base.options.scrollTo(base.$el))
+          activatedTab.click();
+          // Chrome is a jerk about scrolling
+          setTimeout(function() { $(window).scrollTop(0); }, 1 );
         }
       }
     };
