@@ -38,8 +38,9 @@
           base.$el.find(listID).show();
 
           // Remove highlighting - Add to just-clicked tab
-          base.$nav.find("li > a").removeClass(base.options.activeTabClass);
+          base.$nav.find("li, li > a").removeClass(base.options.activeTabClass);
           $newList.addClass(base.options.activeTabClass);
+          $newList.parent("li").addClass(base.options.activeTabClass);
 
           // Add this anchor to the URL
           if (base.options.modifyURL

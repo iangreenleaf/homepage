@@ -185,4 +185,38 @@ a, a:visited {
   }
 }
 
+#offerings {
+  .tab {
+    padding-top: 0.5em;
+  }
+  .tabs {
+    padding: 0;
+    margin: 0;
+    background-color: $off-white;
+    overflow: auto;
+    // For box-shadow
+    padding-top: 3px;
+    li {
+      float: left;
+      list-style: none;
+      font-size: 32px;
+      font-family: "AllerDisplay", "Trebuchet MS", Tahoma, Arial, sans-serif;
+      margin-left: 0.5em;
+      padding: 0 0.2em;
+      box-shadow: 0 3px 3px 1px rgba(0, 0, 0, 0.2);
+      // Stupid fake inset shadow because CSS is stupid and I hate it
+      @include background-image(linear-gradient($off_white + $off_white_step 88%, $off_white + $off_white_step - #282828));
+      a:hover {
+        text-decoration: none;
+      }
+      &.active {
+        background: $off_white + $off_white_step;
+        a {
+          color: black;
+        }
+      }
+    }
+  }
+}
+
 @import "proudify";
