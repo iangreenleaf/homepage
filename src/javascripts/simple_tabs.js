@@ -71,6 +71,12 @@
           // Chrome is a jerk about scrolling
           setTimeout(function() { $(window).scrollTop(0); }, 1 );
         }
+      } else {
+        // Hack to select the first tab without modifying the URL
+        var oldOpt = base.options.modifyURL;
+        base.options.modifyURL = false;
+        base.$nav.find("li:first-child > a").click();
+        base.options.modifyURL = oldOpt;
       }
     };
     base.init();
