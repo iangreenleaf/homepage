@@ -31,4 +31,6 @@ $(function() {
   $("body").bind("pjax:end", trickOutContent);
   $("body").bind("pjax:start", menuTransition);
   $("nav li a").pjax("#content", { fragment: ".shim" });
+
+  $("#offerings").simpleTabs({navSelector: "ul.tabs", scrollTo: function() { return 0 }});
 });
