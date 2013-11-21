@@ -15,19 +15,14 @@
 
     base.init = function() {
 
-      base.$nav.delegate("li > a", "click", function(event) {
-        if (base.options.beforeHook) {
-          // Call the hook within this context
-          if (base.options.beforeHook.call(this, event) === false) {
-            return false;
-          }
-        }
+      var tabNav = function(clickedTab, options) {
+        var opts = $.extend({}, base.options, options);
 
         // Figure out current list via CSS class
-        var curList = base.$el.find("a."+base.options.activeTabClass).attr("href");
+        var curList = base.$el.find("a."+opts.activeTabClass).attr("href");
 
         // List moving to
-        var $newList = $(this);
+        var $newList = $(clickedTab);
 
         // Figure out ID of new list
         var listID = $newList.attr("href");
@@ -38,24 +33,20 @@
           base.$el.find(listID).show();
 
           // Remove highlighting - Add to just-clicked tab
-          base.$nav.find("li, li > a").removeClass(base.options.activeTabClass);
-          $newList.addClass(base.options.activeTabClass);
-          $newList.parent("li").addClass(base.options.activeTabClass);
+          base.$nav.find("li, li > a").removeClass(opts.activeTabClass);
+          $newList.addClass(opts.activeTabClass);
+          $newList.parent("li").addClass(opts.activeTabClass);
 
           // Add this anchor to the URL
-          if (base.options.modifyURL
+          if (opts.modifyURL
               && listID[0] === "#"
-              && typeof history.replaceState != "undefined") {
+              && typeof history[opts.historyFunc] != "undefined") {
             l = window.location;
-            history.replaceState(null, null, l.protocol + "//" + l.host + l.pathname + l.search + listID);
+            history[opts.historyFunc](null, null, l.protocol + "//" + l.host + l.pathname + l.search + listID);
           }
         }
-
-        $(this).blur()
-
-        // Stop propagation and bubbling
-        return false;
-      });
+      };
+      base.$nav.delegate("li > a", "click", function(event) { tabNav($(this)); $(this).blur(); return false; });
 
       // Hide other tabs on page load
       var inactiveTabs = base.$nav.find("li > a:not(."+base.options.activeTabClass+")");
@@ -64,20 +55,24 @@
         base.$el.find("#"+anchor).hide();
       });
       // Activate correct tab if anchor given
-      if (window.location.hash) {
-        var activatedTab = base.$nav.find("li > a[href="+window.location.hash+"]");
-        if (activatedTab.length) {
-          activatedTab.click();
-          // Chrome is a jerk about scrolling
-          setTimeout(function() { $(window).scrollTop(0); }, 1 );
+      var findTabByHash = function() {
+        if (window.location.hash) {
+          var activatedTab = base.$nav.find("li > a[href="+window.location.hash+"]");
+          if (activatedTab.length) {
+            tabNav(activatedTab, { modifyURL: false });
+            return true;
+          }
         }
-      } else {
-        // Hack to select the first tab without modifying the URL
-        var oldOpt = base.options.modifyURL;
-        base.options.modifyURL = false;
-        base.$nav.find("li:first-child > a").click();
-        base.options.modifyURL = oldOpt;
+        // If we didn't successfully navigate by hash, pick first tab instead
+        tabNav(base.$nav.find("li:first-child > a"), { modifyURL: false });
+        return false;
+      };
+      if (findTabByHash()) {
+        // Chrome is a jerk about scrolling
+        setTimeout(function() { $(window).scrollTop(0); }, 1 );
       }
+      // Change tabs when navigating
+      $(window).on('popstate', function() { findTabByHash(); return true; });
     };
     base.init();
   };
@@ -89,12 +84,13 @@
     , navSelector: ".tabs-nav"
     // Inject the tab's anchor into the URL
     , modifyURL: true
-    // Run a function before tabbing. If it returns false, tab is canceled.
-    , beforeHook: null
     // Where to scroll the viewport after loading a tab on page init.
     // Function that takes the container element as an argument and returns a scroll position.
     // Default: top of the nav element.
     , scrollTo: function(el) { return el.position().top }
+    // Which function to use to modify the browser history. Only applies if options.modifyURL == true.
+    // Possible options are 'pushState' (default) and 'replaceState'
+    , historyFunc: 'pushState'
   };
 
   $.fn.simpleTabs = function(options) {
