@@ -51,6 +51,8 @@
           }
         }
 
+        $(this).blur()
+
         // Stop propagation and bubbling
         return false;
       });
