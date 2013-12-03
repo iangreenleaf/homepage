@@ -142,7 +142,12 @@ a, a:visited {
     margin-top: 0;
   }
 
+  .videos {
+    @include clearfix;
+  }
+
   .video {
+    float: left;
     a {
       margin-top: 1em;
       display: block;
