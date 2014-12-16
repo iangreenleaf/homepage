@@ -126,6 +126,10 @@ a, a:visited {
     line-height: 1.5em;
   }
 
+  aside {
+    @include deemphasized;
+  }
+
   .photo {
     margin: 3em 0;
     img {
@@ -176,7 +180,6 @@ a, a:visited {
       }
       aside {
         margin-top: 0.5em;
-        @include deemphasized;
       }
     }
   }
