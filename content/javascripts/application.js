@@ -1,3 +1,7 @@
+//= require pjax.js
+//= require proudify.js
+//= require simple_tabs.js
+
 $(function() {
   var trickOutContent = function() {
     $("#proudify_github").proudify({'username':'iangreenleaf'});

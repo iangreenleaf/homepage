@@ -24,8 +24,15 @@ compile '/stylesheets/application.scss' do
   write item.identifier.without_ext + '.css'
 end
 
-compile '/**/*.scss' do
+ignore '/**/_*.scss'
+
+compile '/javascripts/application.js' do
+  filter :concat_js
+  filter :yui_compressor, type: 'js'
+  write item.identifier.to_s
 end
+
+ignore '/**/*.js'
 
 compile '/**/*' do
   write item.identifier.to_s

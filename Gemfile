@@ -8,5 +8,7 @@ gem "sass"
 gem "bourbon"
 gem "pandoc-ruby"
 gem "rubypants"
+gem 'nanoc-javascript-concatenator'
+gem 'yuicompressor'
 gem "adsf", group: :development
 gem "guard-nanoc", groups: [:development, :nanoc]
