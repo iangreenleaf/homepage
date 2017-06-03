@@ -7,5 +7,6 @@ gem "haml"
 gem "sass"
 gem "bourbon"
 gem "pandoc-ruby"
+gem "rubypants"
 gem "adsf", group: :development
 gem "guard-nanoc", groups: [:development, :nanoc]

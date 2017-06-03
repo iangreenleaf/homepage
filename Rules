@@ -2,6 +2,7 @@
 
 compile '/**/*.haml' do
   filter :haml
+  filter :rubypants
   layout '/default.*'
 end
 
