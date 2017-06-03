@@ -47,25 +47,4 @@
       }
     }
   }
-
-  &.coderwall {
-    li.item {
-      float: left;
-      margin: 5px;
-      a img {
-        width: 90px;
-        height: 90px;
-        border: 0;
-        // It takes a bit of trickery to add borders to these images
-        border-radius: 45px;
-        box-shadow: rgba(0,0,0,0.25) 2px 3px 2px, rgba(0,0,0,0.25) -2px -3px 4px inset;
-      }
-      a img {
-        opacity: 1.0;
-      }
-      a:hover img {
-        opacity: 0.6;
-      }
-    }
-  }
 }

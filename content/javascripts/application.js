@@ -1,8 +1,6 @@
 $(function() {
   var trickOutContent = function() {
     $("#proudify_github").proudify({'username':'iangreenleaf'});
-    $("#proudify_coderwall").proudify({'username':'iangreenleaf', 'service':'coderwall'});
-    $("#proudify_coderwall2").proudify({'username':'iangreenleaf', 'service':'coderwall'});
   };
   var menuTransition = function(_, xhr, options) {
     $("nav li.current").removeClass("current");
