@@ -3,8 +3,7 @@ task :publish => :build do |t|
 end
 
 task :build do |t|
-  system( "git", "clean", "-x", "-d", build_path ) || fail
-  system( "staticmatic", "build", "." ) || fail
+  system( "nanoc", "compile", "." ) || fail
 end
 
 def build_path
